@@ -5,9 +5,9 @@ import useSound from "use-sound";
 import { doorCreak } from "../sounds";
 import PresentKey from "./PresentKey";
 import PageNumber from "./PageNumber";
-import { hallway } from './storyData'
+import { midway } from './storyData'
 
-const Hallway = (props) => {
+const Midway = (props) => {
 	const [playDoorCreak, doorCreakSoundData] = useSound(doorCreak, {
 		soundEnabled: props.audioOn,
 		volume: 0.1,
@@ -22,27 +22,27 @@ const Hallway = (props) => {
 	}
 
 	return (
-		<div id="hallway">
-			<h1>Hallway</h1>
+		<div id="midway">
+			<h1>Midway</h1>
 			<div className="img-wrap">
-				<img className="hallway" src={img} alt="" />
+				<img className="midway" src={img} alt="" />
 			</div>
 
-			{hallway[page].map((paragraph, index) => (
+			{midway[page].map((paragraph, index) => (
             	<p key={index}>{paragraph}</p>
           	)
         )}
 			
 			<div id="button-bar">
-        {page !== (hallway.length - 1) && (
+        {page !== (midway.length - 1) && (
 			<div className="btn-wrap">
 				<Link to={`/hallwayreroute`}>
 					<button> Skip to Gameplay </button>
 				</Link>
 			</div>
         )}
-				{page !== (hallway.length - 1) ? (
-					<Link to={`/hallway/${page + 1}`}>
+				{page !== (midway.length - 1) ? (
+					<Link to={`/midway/${page + 1}`}>
 						<button id="btn">Continue Story</button>
 					</Link>
 				) : (
@@ -60,7 +60,7 @@ const Hallway = (props) => {
 					))
 				)}
 			</div>
-			{page === (hallway.length - 1) && (props.hasGoldKey || props.hasSilverKey) && (
+			{page === (midway.length - 1) && (props.hasGoldKey || props.hasSilverKey) && (
 				<PresentKey
 					hasGoldKey={props.hasGoldKey}
 					hasSilverKey={props.hasSilverKey}
@@ -69,9 +69,9 @@ const Hallway = (props) => {
 					audioOn={props.audioOn}
 				/>
 			)}
-			<PageNumber pages={hallway} page={page} title="Hallway" />
+			<PageNumber pages={midway} page={page} title="Midway" />
 		</div>
 	);
 };
 
-export default Hallway;
+export default Midway;
