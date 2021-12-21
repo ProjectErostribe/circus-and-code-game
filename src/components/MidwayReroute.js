@@ -18,15 +18,15 @@ const HallwayReroute = (props) => {
 	}
 
   const hallwayText = <div>
-    <p>In front of you is a hallway filled with doors. Each room has a challenge for you to beat. One room holds the key.</p>
-    <p>Complete the challenge, find the key, and make your way back to the hallway to present the key, save your friends and escape!</p>
+    <p>In front of you is a midway f.</p>
+    <p>Complete the challenge, </p>
   </div>
 
 	return (
 		<div id="hallway">
 			<h1>Hallway</h1>
 			<div className="img-wrap">
-				<img className="hallway" src={img} alt="" />
+				<img className="midway" src={img} alt="" />
 			</div>
 			{hallwayText}
 			<div id="button-bar">
